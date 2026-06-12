@@ -1,21 +1,15 @@
 class Solution {
-public:
+   public:
     bool isPalindrome(int x) {
-        long long ans = 0;
-        int rem, num = x;
-
-        if (x < 0) {
+        if (x < 0 || (x != 0 && x % 10 == 0)) {
             return false;
         }
+        int reversedHalf = 0;
 
-        while (x) {
-            rem = x % 10;
-            if (ans > INT_MAX / 10 || ans < INT_MIN / 10) {
-                return false;
-            }
-            ans = ans * 10 + rem;
+        while (x > reversedHalf) {
+            reversedHalf = reversedHalf * 10 + x % 10;
             x /= 10;
         }
-        return ans == num;
+        return x == reversedHalf || x == reversedHalf / 10;
     }
 };
