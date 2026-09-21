@@ -6,10 +6,11 @@ public:
             st.insert(c);
         }
         int count = 0;
-        for(int i = 0; i <stones.length(); i++){
-            if(st.find(stones[i]) != st.end()){
-                count++;
-            }
+       for(char c : stones){
+        if(st.find(c) != st.end()){
+            count++;
+        }
+       
         }
         return count;
     }
