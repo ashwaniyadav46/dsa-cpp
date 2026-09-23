@@ -10,9 +10,7 @@ public:
             if(word.length() > 2){
                 word[0] = toupper(word[0]);
             }
-            if(!result.empty()){
-                result += " ";
-            }
+            if(!result.empty()) result += " ";
             result += word;
         }
         return result;
