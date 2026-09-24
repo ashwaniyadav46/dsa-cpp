@@ -3,9 +3,8 @@ public:
     int n;
     bool isPalindrome(string& s, int l, int r) {
         while (l < r) {
-            if (s[l] != s[r]) {
+            if (s[l] != s[r])
                 return false;
-            }
             l++;
             r--;
         }
