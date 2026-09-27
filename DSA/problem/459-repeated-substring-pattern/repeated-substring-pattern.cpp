@@ -1,29 +1,21 @@
 class Solution {
 public:
     bool repeatedSubstringPattern(string s) {
-
         int n = s.length();
-
-        for (int len = 1; len < n; len++) {
-
-            // repeating substring must divide the whole string
-            if (n % len != 0)
-                continue;
-
-            bool same = true;
-
-            for (int i = 0; i < n; i++) {
-
-                if (s[i] != s[i % len]) {
-                    same = false;
-                    break;
+        for(int l = n/2;  l >= 1; l--){
+            if(n % l == 0){
+                int times = n / l;
+                string pattern  = s.substr(0, l);
+                string newStr = "";
+                while(times --){
+                    newStr += pattern;
+                }
+                if(newStr == s){
+                    return true;
                 }
             }
-
-            if (same)
-                return true;
+            
         }
-
-        return false;
+    return false;
     }
 };
